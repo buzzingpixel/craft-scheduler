@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="testBootstrap.php"
+         executionOrder="depends,defects"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         colors="true"
+         printerClass="Codedungeon\PHPUnitPrettyResultPrinter\Printer"
+         verbose="true"
+>
+    <coverage>
+        <report>
+            <html outputDirectory="code_coverage/" lowUpperBound="35" highLowerBound="70"/>
+            <text outputFile="php://stdout" showOnlySummary="true"/>
+        </report>
+    </coverage>
+    <testsuites>
+        <testsuite name="Craft Scheduler">
+            <directory suffix="Test.php">src</directory>
+        </testsuite>
+    </testsuites>
+    <logging/>
+</phpunit>
