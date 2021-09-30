@@ -8,6 +8,8 @@ interface RecordContract
 {
     public static function table(): string;
 
+    public function tableName(): string;
+
     /**
      * @param mixed[] $item
      */
