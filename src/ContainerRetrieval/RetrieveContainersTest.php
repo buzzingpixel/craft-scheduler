@@ -34,11 +34,11 @@ class RetrieveContainersTest extends TestCase
                 $containerItem2
             ): void {
                 $e->containerConfigItems()->addItem(
-                    item:$containerItem1,
+                    item: $containerItem1,
                 );
 
                 $e->containerConfigItems()->addItem(
-                    item:$containerItem2,
+                    item: $containerItem2,
                 );
             },
         );
