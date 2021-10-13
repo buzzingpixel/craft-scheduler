@@ -1,0 +1,9 @@
+name: CI
+on: [push]
+jobs:
+  phpunit:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - run: composer install --no-interaction --no-ansi --no-progress
+      - run: XDEBUG_MODE=coverage ./vendor/bin/phpunit
