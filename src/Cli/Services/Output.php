@@ -26,6 +26,8 @@ class Output implements OutputContract
 
     /**
      * @inheritDoc
+     * @phpstan-ignore-next-line
+     * @psalm-suppress MissingParamType
      */
     public function write(string $message, ...$decorations): void
     {
@@ -40,6 +42,11 @@ class Output implements OutputContract
         );
     }
 
+    /**
+     * @inheritDoc
+     * @phpstan-ignore-next-line
+     * @psalm-suppress MissingParamType
+     */
     public function writeln(string $message, ...$decorations): void
     {
         $args = array_merge([$message . PHP_EOL], $decorations);
@@ -55,6 +62,8 @@ class Output implements OutputContract
 
     /**
      * @inheritDoc
+     * @phpstan-ignore-next-line
+     * @psalm-suppress MissingParamType
      */
     public function writeErr(string $message, ...$decorations): void
     {
@@ -69,6 +78,11 @@ class Output implements OutputContract
         );
     }
 
+    /**
+     * @inheritDoc
+     * @phpstan-ignore-next-line
+     * @psalm-suppress MissingParamType
+     */
     public function writelnErr(string $message, ...$decorations): void
     {
         $args = array_merge([$message . PHP_EOL], $decorations);

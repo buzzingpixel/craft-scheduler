@@ -1,9 +1,20 @@
 name: CI
 on: [push]
 jobs:
-  phpunit:
+  code-quality:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - run: composer install --no-interaction --no-ansi --no-progress
-      - run: XDEBUG_MODE=coverage ./vendor/bin/phpunit
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Install composer dependencies
+        run: composer install --no-interaction --no-ansi --no-progress
+      - name: Run PHPUnit
+        run: XDEBUG_MODE=coverage ./vendor/bin/phpunit
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan analyse src
+      - name: Run Psalm
+        run: ./vendor/bin/psalm
+      - name: Run phppcs
+        run: ./vendor/bin/phpcs
+      - name: Run php-cs-fixer
+        run: ./vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no

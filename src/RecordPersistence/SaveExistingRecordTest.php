@@ -83,6 +83,7 @@ class SaveExistingRecordTest extends TestCase
             ->willReturnCallback(static function () use (
                 $dataStore
             ): int {
+                /** @psalm-suppress TypeDoesNotContainType */
                 self::assertTrue($dataStore->updateWasCalled);
 
                 return 1;

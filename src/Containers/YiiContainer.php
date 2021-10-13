@@ -21,6 +21,8 @@ class YiiContainer implements ContainerInterface
     /**
      * @throws InvalidConfigException
      * @throws NotInstantiableException
+     *
+     * @psalm-suppress MixedInferredReturnType
      */
     public function get(string $id): object
     {
@@ -44,10 +46,7 @@ class YiiContainer implements ContainerInterface
         return $instance;
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function has(string $id)
+    public function has(string $id): bool
     {
         try {
             $this->get($id);

@@ -77,7 +77,6 @@ class Install extends Migration
             $class = 'BuzzingPixel\\CraftScheduler\\migrations\\' . $fileName;
 
             /**
-             * @psalm-suppress UndefinedClass
              * @phpstan-ignore-next-line
              */
             $classes[$class] = Yii::$container->get($class);

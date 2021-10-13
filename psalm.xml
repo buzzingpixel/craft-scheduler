@@ -9,6 +9,7 @@
         <directory name="src"/>
         <ignoreFiles>
             <directory name="vendor"/>
+            <file name="src/migrations/Install.php"/>
         </ignoreFiles>
     </projectFiles>
 

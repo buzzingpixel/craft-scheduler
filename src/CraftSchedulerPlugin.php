@@ -57,9 +57,14 @@ class CraftSchedulerPlugin extends Plugin
          */
         Yii::$container->set(
             Connection::class,
+            /** @phpstan-ignore-next-line */
             Craft::$app->getDb(),
         );
 
+        /**
+         * @psalm-suppress UndefinedClass
+         * @phpstan-ignore-next-line
+         */
         Yii::$container->set(
             ClockInterface::class,
             SystemClock::class,
